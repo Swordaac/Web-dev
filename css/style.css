@@ -1,62 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&display=swap');
-.mission-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.mission-statement {
-    color: grey;
-    font-size: smaller;
-}
-
-.mission-points {
-    list-style: none;
-    /* 移除默认的列表样式 */
-    padding: 0;
-    /* 移除默认的内边距 */
-}
-
-.mission-points li {
-    font-weight: bold;
-    position: relative;
-    padding-left: 20px;
-    /* 为分割线留出空间 */
-    margin-bottom: 20px;
-    /* 如果需要，可以调整 */
-}
-
-.mission-points li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 1px;
-    /* 分割线的高度 */
-    background-color: grey;
-    /* 分割线颜色 */
-}
-
-
-/* 最后一项列表元素后不显示分割线 */
-
-.mission-points li:last-child::before {
+.hidden {
     display: none;
-}
-
-.mission-points li:not(:last-child) {
-    border-bottom: 1px solid grey;
-    /* 添加分割线 */
-    padding-bottom: 20px;
-    /* 调整与下一个列表项的间距 */
-}
-
-.img-fluid {
-    display: block;
-    max-width: 100%;
-    height: auto;
 }
 
 :root {
@@ -683,6 +627,45 @@ footer .social-icons a {
     font-size: 20px;
     margin-left: 4px;
     margin-right: 4px;
+}
+
+
+/* new 响应式*/
+
+@media (max-width: 768px) {
+    footer .footer-top,
+    .footer-bottom {
+        padding: 10px 15px;
+        /* 在小屏幕上调整内边距 */
+    }
+    footer .footer-top .row>div,
+    .footer-bottom {
+        margin-bottom: 20px;
+        /* 在列之间增加一些外边距以避免内容挤压 */
+    }
+    footer h5 {
+        font-size: 16px;
+        /* 减小标题的字体大小 */
+    }
+    footer p,
+    .recent-post p {
+        font-size: 14px;
+        /* 减小段落的字体大小 */
+    }
+    footer .recent-post {
+        width: 100%;
+        /* 小屏幕上让recent-post占满整个宽度 */
+    }
+    .recent-post img {
+        height: auto;
+        /* 调整图片高度为自动，以保持宽高比 */
+    }
+    footer .social-icons a {
+        width: 40px;
+        /* 在小屏幕上减小社交图标的尺寸 */
+        height: 40px;
+        font-size: 18px;
+    }
 }
 
 .loader {
