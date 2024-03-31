@@ -577,6 +577,9 @@ section {
     margin-right: 10px;
 }
 
+
+/* 原有样式 */
+
 footer {
     background-color: white;
     background-size: cover;
@@ -630,33 +633,40 @@ footer .social-icons a {
 }
 
 
-/* new 响应式*/
+/* 增加的响应式设计调整 */
 
 @media (max-width: 768px) {
     footer .footer-top,
     .footer-bottom {
         padding: 10px 15px;
+        /* 在小屏幕上调整内边距 */
     }
-    footer h5,
-    footer p {
-        font-size: 14px;
+    footer .recent-post {
+        width: 100%;
+        /* 小屏幕上让recent-post占满整个宽度 */
     }
     .recent-post img {
-        width: 100%;
-        /* 让图片在小屏幕上占满可用宽度 */
         height: auto;
+        /* 调整图片高度为自动，以保持宽高比 */
+        margin-bottom: 10px;
+        /* 在图片和文字之间增加一些间距 */
     }
-    footer .row>div,
-    footer .recent-post {
-        margin-bottom: 15px;
-        /* 增加底部间距以避免内容挤压 */
+    footer h5 {
+        font-size: 16px;
+        /* 减小标题的字体大小 */
     }
-    footer .container,
-    footer .row,
-    .recent-post {
-        width: 100%;
-        /* 确保在小屏幕上元素不会超出屏幕宽度 */
-        max-width: none;
+    footer p,
+    .recent-post p {
+        font-size: 14px;
+        /* 减小段落的字体大小 */
+        margin-bottom: 10px;
+        /* 增加段落之间的间距 */
+    }
+    footer .social-icons a {
+        width: 40px;
+        /* 在小屏幕上减小社交图标的尺寸 */
+        height: 40px;
+        font-size: 18px;
     }
 }
 
