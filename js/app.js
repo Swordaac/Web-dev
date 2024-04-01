@@ -17,7 +17,7 @@ $(document).ready(function() {
             sectionToShow = "#why-choose-us";
         } else if ($(this).text() === "How we work") {
             sectionToShow = "#how-we-work";
-        } else if ($(this).text() === "Our mission") {
+        } else if ($(this).text() === "Our Mission") {
             sectionToShow = "#our-mission";
         }
 
