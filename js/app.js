@@ -3,7 +3,7 @@ $(document).ready(function() {
         $('.btn').removeClass('btn-clicked').addClass('btn-brand');
     }
 
-    $('.btn').click(function() {
+    $('.btn-tag').click(function() {
         resetButtons();
         $(this).removeClass('btn-brand').addClass('btn-clicked');
 
