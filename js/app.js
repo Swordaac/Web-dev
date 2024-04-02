@@ -4,7 +4,7 @@ $(document).ready(function() {
     }
 
     // Event listener 
-    $('.btn-tag').click(function() {
+    $('.btn').click(function() {
         resetButtons();
         $(this).removeClass('btn-brand').addClass('btn-clicked');
         let sectionToShow;
