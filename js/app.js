@@ -13,24 +13,26 @@ $(document).ready(function() {
 
         // Determine which section to show
         let sectionToShow;
-        if ($(this).text() === "Why choose us") {
+        if ($(this).text().trim() === "Why choose us") {
             sectionToShow = "#why-choose-us";
-        } else if ($(this).text() === "How we work") {
+        } else if ($(this).text().trim() === "How we work") {
             sectionToShow = "#how-we-work";
-        } else if ($(this).text() === "Our Mission") {
+        } else if ($(this).text().trim() === "Our Mission") {
             sectionToShow = "#our-mission";
         }
 
-        // Fade out the currently visible section, then fade in the new section
-        $("#why-choose-us, #how-we-work, #our-mission").fadeOut(500, function() {
-            $(sectionToShow).fadeIn(500);
+        // Ensure all animations stop before starting new ones to avoid queue build-up
+        // And use 'stop(true, true)' to clear the queue and complete the current animation immediately.
+        $(".content-section").stop(true, true).fadeOut(500, function() {
+            // This callback function will be called once for each matching element, leading to multiple calls
+            // Therefore, it's better to use fadeOut on all sections together, but fadeIn only the target section outside this callback
         });
 
+        // Correctly fade in the new section without waiting for all fadeOut operations to complete
+        $(sectionToShow).stop(true, true).fadeIn(500);
     });
-
-    // No need for explicit hover handling since CSS takes care of it:
-    // The ':hover' pseudo-class in CSS changes styles when the mouse hovers over the buttons.
 });
+
 
 
 $(document).ready(function() {
