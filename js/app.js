@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
     function resetButtons() {
         $('.btn').removeClass('btn-clicked').addClass('btn-brand');
     }
@@ -20,7 +20,32 @@ $(document).ready(function() {
 
         $(sectionToShow).stop(true, true).fadeIn(500);
     });
+});*/
+
+$('.btn').click(function() {
+    resetButtons();
+    $(this).removeClass('btn-brand').addClass('btn-clicked');
+
+    let sectionToShow = "";
+    switch ($(this).text().trim()) {
+        case "Why choose us":
+            sectionToShow = "#why-choose-us";
+            break;
+        case "How we work":
+            sectionToShow = "#how-we-work";
+            break;
+        case "Our Mission":
+            sectionToShow = "#our-mission";
+            break;
+        default:
+            // 如果没有匹配的case，可能不需要隐藏显示任何内容
+            return; // 直接返回，不执行后面的fadeOut和fadeIn
+    }
+
+    $(".content-section").not(sectionToShow).stop(true, true).fadeOut(500);
+    $(sectionToShow).stop(true, true).fadeIn(500);
 });
+
 
 
 
