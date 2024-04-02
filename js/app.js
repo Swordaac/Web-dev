@@ -1,17 +1,12 @@
 $(document).ready(function() {
-    // Function to reset buttons to their primary state
     function resetButtons() {
-        $('.btn').removeClass('btn-clicked').addClass('btn-brand');
+        $('.btn-tag').removeClass('btn-clicked').addClass('btn-brand');
     }
 
-    // Event listener for mouse click on the buttons
-    $('.btn').click(function() {
-        // Reset all buttons to primary state
+    // Event listener 
+    $('.btn-tag').click(function() {
         resetButtons();
-        // Change the clicked button to the 'clicked' state
         $(this).removeClass('btn-brand').addClass('btn-clicked');
-
-        // Determine which section to show
         let sectionToShow;
         if ($(this).text().trim() === "Why choose us") {
             sectionToShow = "#why-choose-us";
@@ -21,14 +16,8 @@ $(document).ready(function() {
             sectionToShow = "#our-mission";
         }
 
-        // Ensure all animations stop before starting new ones to avoid queue build-up
-        // And use 'stop(true, true)' to clear the queue and complete the current animation immediately.
-        $(".content-section").stop(true, true).fadeOut(500, function() {
-            // This callback function will be called once for each matching element, leading to multiple calls
-            // Therefore, it's better to use fadeOut on all sections together, but fadeIn only the target section outside this callback
-        });
+        $(".content-section").stop(true, true).fadeOut(500, function() {});
 
-        // Correctly fade in the new section without waiting for all fadeOut operations to complete
         $(sectionToShow).stop(true, true).fadeIn(500);
     });
 });
