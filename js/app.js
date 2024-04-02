@@ -1,10 +1,10 @@
 $(document).ready(function() {
     function resetButtons() {
-        $('.btn-tag').removeClass('btn-clicked').addClass('btn-brand');
+        $('div > .btn-tag').removeClass('btn-clicked').addClass('btn-brand');
     }
 
     // Event listener 
-    $('.btn-tag').click(function() {
+    $('div > .btn-tag').click(function() {
         resetButtons();
         $(this).removeClass('btn-brand').addClass('btn-clicked');
         let sectionToShow;
